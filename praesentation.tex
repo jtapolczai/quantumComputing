@@ -1,0 +1,111 @@
+\documentclass{beamer}
+
+\usetheme{Pittsburgh}
+\setbeamertemplate{headline}{}
+
+\newcommand{\chapterframe}[1]{\begin{frame}\centering\huge{#1}\end{frame}}
+\newcommand{\mt}[1]{\textnormal{#1}}
+
+\title{Quantum Computing}
+\subtitle{Introduction \& recent developments}
+\author{Stephan Spindler \and Janos Tapolczai \and Dominik Theuerkauf}
+
+\begin{document}
+
+% Titelseite
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Inhalt
+% man muss \frame{...} statt \begin{frame}..\end{frame} verwenden, damit
+% die TOC erscheint... ist halt so. Magie.
+\frame{\frametitle{Contents}\tableofcontents}
+
+% Kapitelframes - nur ein zentriertel Titel
+%-----------------------------------------------------------------------------
+\section{Mathematics}
+\chapterframe{Mathematics}
+
+\begin{frame}{Mathematics}
+(hier mathematische einleitung einfuegen)
+\end{frame}
+
+% Kapitelframes - nur ein zentriertel Titel
+%-----------------------------------------------------------------------------
+\section{Algorithms}
+\chapterframe{Algorithms}
+
+\begin{frame}{Algorithms}
+	\begin{itemize}
+		\item Quantum algorithms use a number of techinques, e.g.
+			\begin{itemize}
+				\item Quantum Fourier Transformation (QFT)
+				\item Amplitude Amplification
+				\item Quantum Walks
+			\end{itemize}
+		\item These take $\Omega(2^n)$ time on classical computer,
+		\item but often only $O(n^k)$ on quantum computers*.
+			\begin{itemize}
+				\item * given certain assumptions.
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Quantum Fourier Transformation}
+	\begin{itemize}
+		\item QFT vs classical FT
+	\end{itemize}
+\end{frame}
+
+\subsection{Shor's algorithm}
+
+\begin{frame}{Shor's Algorithm}{Quantum Fourier Transformation}
+	\begin{definition}[Integer factorization]
+		$\texttt{factor} : \mathbb{N} \rightarrow \mt{Set}[\mathbb{N}]$\\
+		\quad Input: $n \in \mathbb{N}$\\
+		\quad Output: $P \subseteq \mathbb{N}$ s.t. $\prod\limits_{p \in P} p = n$.
+	\end{definition}
+
+	\begin{itemize}
+		\item Best known classical algorithm: generalized prime number sieve (GPNS).
+			\begin{itemize}
+				\item $O(e^{1.9 \log(n)^{\frac{1}{3}} (\log\log(n))^{\frac{2}{3}}}) = O(e^{f(n)})$ for sub-exponential $f$.
+			\end{itemize}
+			
+		\item Shor's algorithm runs in \textbf{polylogarithmic} time.
+			\begin{itemize}
+				\item $O(\log(n)^3)$
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Amplitude Amplification}
+\end{frame}
+
+\subsection{Grover's algorithm}
+
+\begin{frame}{Grover's algorithm}
+\end{frame}
+
+\begin{frame}{Quantum Walks}
+\end{frame}
+
+\subsection{Element distinctness problem}
+
+\begin{frame}{Element distinctness problem}
+\end{frame}
+
+
+
+% Kapitelframes - nur ein zentriertel Titel
+%-----------------------------------------------------------------------------
+\section{Recent developments}
+\chapterframe{Recent developments}
+
+\begin{frame}{Recent developments}
+(neue papers)
+\end{frame}
+
+
+\end{document}
